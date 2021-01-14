@@ -1,0 +1,318 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <!-- 20130508 - Riattivato iso-8859-1 perche utf-8 non visualizza correttamente euro -->
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> -->
+    <meta http-equiv="Content-Type"
+      content="text/html; charset=utf-8" />
+    <!--<title>dirLIST - Index of: home/</title>-->
+    <title>Monitor Informativo</title>
+
+    <script language="Javascript">
+      // --- Variabile Gestione Ritorno
+      var isAlone = false;
+    </script>
+    <style type="text/css">
+      <!--
+      body,
+      td,
+      th {
+        font-family: Tahoma, Verdana;
+        font-size: 10pt;
+      }
+
+      a:link {
+        text-decoration: none;
+        color: #30316F;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: normal;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #30316F;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: normal;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      a:active {
+        background: red;
+        text-decoration: none;
+      }
+
+      /* a:hover {background-color: #EEEEEE;} */
+      /* a:active {text-decoration: none;color: ;} */
+      a.sort:link {
+        text-decoration: underline;
+        color: ;
+      }
+
+      a.sort:visited {
+        text-decoration: underline;
+        color: ;
+      }
+
+      a.sort:hover {
+        text-decoration: underline;
+        color: ;
+      }
+
+      a.sort:active {
+        text-decoration: none;
+        color: ;
+      }
+
+      .top_row {
+        color: ;
+        font-weight: bold;
+        font-size: 14px;
+        background-color: ;
+      }
+
+      /* .folder_bg {background-color: ; */
+      /* td.folder_bg {background-color: #EEEEEE}; */
+      .folder_bg {
+        background-color: #EEEEEE;
+      }
+
+      .file_bg1 {
+        background-color: ;
+      }
+
+      .file_bg2 {
+        background-color: ;
+      }
+
+      .table_border {
+        border: 1px dashed #666666;
+      }
+
+      .path_font {
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .banned_font {
+        font-size: 9px;
+      }
+
+      .error {
+        border-top-width: 2px;
+        border-bottom-width: 2px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-top-color: #FF666A;
+        border-bottom-color: #FF666A;
+      }
+
+      #color_scheme {
+        cursor: pointer;
+      }
+
+      .option_style {
+        font-family: Verdana, Tahoma;
+        font-size: 11px;
+      }
+
+      .language_selection {
+        height: 22px;
+        width: 182px;
+        background-color: ;
+        border: 1px dashed #666666;
+      }
+
+      .selected_lang {
+        background-color: ;
+      }
+
+      #file_edit_box {
+        position: absolute;
+        width: 150px;
+        display: none;
+      }
+      -->
+    </style>
+    <!--
+<style media="screen" type="text/css">
+ td:active
+ {
+ color: #000;
+ background: #8B9C18;
+ }
+/*
+ #col3 td:hover
+ {
+ color: #000;
+ background: #FFCCFF;
+ }
+*/
+</style>
+-->
+
+
+    <script type="text/javascript">
+      var images_paths = [];
+      var thumb_counter = 0;
+
+      function display_thumbs() {
+        more_thumbs = true;
+
+        while (more_thumbs) {
+          thumb = document.getElementById('img_thumb_' + thumb_counter);
+          if (document.getElementById('img_thumb_' + thumb_counter) != null) {
+            images_paths.push(thumb.getAttribute('link_att'));
+            get_thumb(thumb_counter);
+            thumb_counter++;
+          }
+          else
+            more_thumbs = false;
+        }
+      }
+
+      function get_thumb(id) {
+        var xhr;
+        try { xhr = new XMLHttpRequest(); }
+        catch (e) {
+          try {
+            xhr = new ActiveXObject("Msxml12.XMLHTTP");
+          }
+          catch (e) {
+            try {
+              xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch (e) {
+              alert("Your browser does not support AJAX!");
+              return false;
+            }
+          }
+        }
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            document.getElementById('img_thumb_' + id).setAttribute('src', $_SERVER["DOCUMENT_ROOT"] + 'thumb_gen.php?image_path=' + document.getElementById('img_thumb_' + id).getAttribute('link_att'));
+          }
+        }
+        xhr.open("GET", $_SERVER["DOCUMENT_ROOT"] + "/thumb_gen.php?image_path=" + images_paths[id], true);
+        xhr.send(null);
+      }
+    </script>
+
+  </head>
+
+  <!-- DvD Inizio Testata -->
+
+  <style type="text/css">
+    <!--
+    .StileTitolo {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 46px;
+      line-height: normal;
+    }
+
+    .StileTitolo2 {
+      color: #006600
+    }
+
+    .StileTitolo3 {
+      color: #000066
+    }
+    -->
+  </style>
+
+  <table width="100%"
+    border="0"
+    cellpadding="0"
+    cellspacing="0">
+    <tr>
+      <td width="7%"></td>
+      <td width="30%"
+        align="left"><img src="logoBanca.gif"></td>
+      <td width="28%">
+        <div align="center"><span class="StileTitolo"><span class="StileTitolo2">M</span>onitor <span
+              class="StileTitolo3">I</span>nformativo</span></div>
+      </td>
+      <td width="29%"
+        align="right"><a href="/"><img src="home_icon.gif"
+            style="border-style: none;"></a>
+      </td>
+      <td width="6%"></td>
+    </tr>
+    <tr height="3">
+      <td colspan="9"
+        bgcolor="#336600"></td>
+    </tr>
+  </table>
+  <!-- DvD Fine Testata -->
+
+
+  <!--
+<head>
+<style type="text/css">
+html {
+overflow: auto; #Nasconde vertical scrollbar
+}
+</style>
+</head>
+-->
+
+
+  <SCRIPT LANGUAGE="Javascript">
+    function framePrint() {
+      var iframe = this._printIframe;
+      if (!this._printIframe) {
+        iframe = this._printIframe = document.createElement('iframe');
+        document.body.appendChild(iframe);
+
+        iframe.style.display = 'none';
+        iframe.onload = function () {
+          setTimeout(function () {
+            iframe.focus();
+            iframe.contentWindow.print();
+          }, 1);
+        };
+      }
+
+      iframe.src = "test.pdf";
+
+    }
+  </script>
+
+  <body onmousemove="javascript:isAlone=false;">
+
+    <table width="100%">
+      <tr>
+        <td rowspan="2"
+          width="90%">
+          <embed id="pdfDoc"
+            name="frame1"
+            src="test.pdf#toolbar=0"
+            type="application/pdf"
+            width="97%"
+            height="850"></embed>
+        </td>
+        <td valign="top"
+          width="10%">
+          <center> <a href=""><img src="left_icon.gif"
+                style="border-style: none;"></a> <br> <a href="javascript:framePrint();"><img src="printer_icon.gif"
+                style="border-style: none;"></a> </center>
+        </td>
+      </tr>
+      <tr>
+        <td align="right"
+          valign="bottom"
+          style="color: gray; font-size: 11px; font-family: arial;">powered by<br><img src="logoAllrs30.png"
+            </img></td>
+      </tr>
+    </table>
+  </body>
+
+</html>
